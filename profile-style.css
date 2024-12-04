@@ -1,0 +1,338 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe4e6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #000000;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #ffd2d5;
+}
+.profile-info {
+  background-color: #ffffffb0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile-info h2 {
+  color: #000000;
+  font-size: 1.8em;
+}
+
+.profile-info p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.user-posts {
+  margin-top: 20px;
+  margin: 20px;
+}
+
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-header h3 {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.post-header span {
+  font-size: 0.9em;
+  color: #999;
+  margin-left: auto;
+}
+
+.post-content p {
+  font-size: 1em;
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.post-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Likes and Comments Count (Left) */
+.likes-comments-count {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.likes-comments-count span {
+  margin-right: 10px;
+}
+
+/* Action Icons (Right) */
+.post-actions .action-icons {
+  display: flex;
+  align-items: center;
+}
+
+.like-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: #ffd2d5;
+  color: #000;
+}
+/* Comment Section Styles */
+.comments-section {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.comments-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment-header span {
+  font-size: 0.9em;
+  color: #999;
+  margin-left: auto;
+}
+
+.comment-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-textarea {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.submit-comment {
+  align-self: flex-start;
+  padding: 5px 10px;
+  background-color: #ffd2d5;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-comment:hover {
+  background-color: #000000;
+  color: white;
+}
+
+/* View Comments Button */
+.view-comments-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-comments-button:hover {
+  background-color: #ffd2d5;
+  color: #000;
+}
+.edit-profile-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.edit-profile-btn:hover {
+  background-color: #ffd2d5;
+  color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #ffe4e6;
+  margin: 1rem auto;
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  width: 40%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-content h2 {
+  text-align: center;
+  color: #000;
+}
+
+.modal-content {
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 96%;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.modal-content .save {
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.modal-content .save:hover {
+  background-color: #ffd2d5;
+  color: #000;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #000;
+}
+
+.edit-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #ffd2d5;
+  color: #000;
+}
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+.current-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+.comment-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  margin-right: 3px;
+}
